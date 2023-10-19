@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import cors from "cors"
 import morgan from 'morgan'
 import bodyParser from "body-parser";
-
+import dbConection from './dbConfig/index.js'
 // secuity packages
 import helmet from  "helmet"
 dotenv.config()
@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.json({limit: "10mn"}))
 app.use(express.urlencoded({extended:true}))
 app.use(morgan('dev'))
+dbConection()
 app.listen(PORT,()=>{
     console.log(`Server running on port : http://localhost:${PORT}`)
 })

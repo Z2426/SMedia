@@ -3,7 +3,7 @@ const dbConection = async()=>{
     try{
         const connect =await mongoose.connect(process.env.MONGODB_URL,{
             useNewURLParser :true,
-            useUnifliedTopology:true
+            //useUnifliedTopology:true
 
         })
         console.log("DB connected succesfully")
@@ -11,4 +11,4 @@ const dbConection = async()=>{
         console.log("DB error"+e)
     }
 }
-export default  dbConection()
+export default  dbConection
